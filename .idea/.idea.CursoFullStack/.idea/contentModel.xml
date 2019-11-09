@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\programacion\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\programacion\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_CursoFullStack.-1827710391.00" t="ExcludeRecursive" />
+    <e p="C:\Users\programacion\Documents\Api\CursoFullStack" t="IncludeFlat">
+      <e p=".git\info\exclude" t="IncludeRecursive" />
+      <e p="CursoFullStack.sln" t="IncludeFlat" />
+      <e p="InventarioApi" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Contexts" t="Include">
+          <e p="InventarioDBContext.cs" t="Include" />
+          <e p="InventarioIdentityContext.cs" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="CategoriasController.cs" t="Include" />
+          <e p="ClientesController.cs" t="Include" />
+          <e p="ComprasController.cs" t="Include" />
+          <e p="CuentasController.cs" t="Include" />
+          <e p="DetalleComprasController.cs" t="Include" />
+          <e p="DetalleFacturasController.cs" t="Include" />
+          <e p="EmailClientesController.cs" t="Include" />
+          <e p="EmailProveedoresController.cs" t="Include" />
+          <e p="FacturasController.cs" t="Include" />
+          <e p="InventariosController.cs" t="Include" />
+          <e p="ProductosController.cs" t="Include" />
+          <e p="ProveedoresController.cs" t="Include" />
+          <e p="TelefonoClientesController.cs" t="Include" />
+          <e p="TelefonoProveedoresController.cs" t="Include" />
+          <e p="TipoEmpaquesController.cs" t="Include" />
+          <e p="ValuesController.cs" t="Include" />
+        </e>
+        <e p="Entities" t="Include">
+          <e p="Categoria.cs" t="Include" />
+          <e p="Cliente.cs" t="Include" />
+          <e p="Compra.cs" t="Include" />
+          <e p="DetalleCompra.cs" t="Include" />
+          <e p="DetalleFactura.cs" t="Include" />
+          <e p="Emailcliente.cs" t="Include" />
+          <e p="EmailProveedor.cs" t="Include" />
+          <e p="Factura.cs" t="Include" />
+          <e p="Inventario.cs" t="Include" />
+          <e p="Producto.cs" t="Include" />
+          <e p="Proveedor.cs" t="Include" />
+          <e p="Role.cs" t="Include" />
+          <e p="TelefonoCliente.cs" t="Include" />
+          <e p="TelefonoProveedor.cs" t="Include" />
+          <e p="TipoEmpaque.cs" t="Include" />
+          <e p="User.cs" t="Include" />
+          <e p="UserRole.cs" t="Include" />
+        </e>
+        <e p="InventarioApi.csproj" t="IncludeRecursive" />
+        <e p="Migrations" t="Include">
+          <e p="20191109173415_initial.cs" t="Include" />
+          <e p="20191109173415_initial.Designer.cs" t="Include" />
+          <e p="InventarioDBContextModelSnapshot.cs" t="Include" />
+          <e p="InventarioIdentity" t="Include">
+            <e p="20191109173447_initial.cs" t="Include" />
+            <e p="20191109173447_initial.Designer.cs" t="Include" />
+            <e p="InventarioIdentityContextModelSnapshot.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Models" t="Include">
+          <e p="ApplicationUser.cs" t="Include" />
+          <e p="CategoriaCreacionDTO.cs" t="Include" />
+          <e p="CategoriaDTO.cs" t="Include" />
+          <e p="ClienteCreacionDTO.cs" t="Include" />
+          <e p="ClienteDTO.cs" t="Include" />
+          <e p="CompraCreacionDTO.cs" t="Include" />
+          <e p="CompraDTO.cs" t="Include" />
+          <e p="DetalleCompraCreacionDTO.cs" t="Include" />
+          <e p="DetalleCompraDTO.cs" t="Include" />
+          <e p="DetalleFacturaCreacionDTO.cs" t="Include" />
+          <e p="DetalleFacturaDTO.cs" t="Include" />
+          <e p="EmailClienteCreacionDTO.cs" t="Include" />
+          <e p="EmailClienteDTO.cs" t="Include" />
+          <e p="EmailProveedorCreacionDTO.cs" t="Include" />
+          <e p="EmailProveedorDTO.cs" t="Include" />
+          <e p="FacturaCreacionDTO.cs" t="Include" />
+          <e p="FacturaDTO.cs" t="Include" />
+          <e p="InventarioCreacionDTO.cs" t="Include" />
+          <e p="InventarioDTO.cs" t="Include" />
+          <e p="ProductoCreacionDTO.cs" t="Include" />
+          <e p="ProductoDTO.cs" t="Include" />
+          <e p="ProveedorCreacionDTO.cs" t="Include" />
+          <e p="ProveedorDTO.cs" t="Include" />
+          <e p="TelefonoClienteCreacionDTO.cs" t="Include" />
+          <e p="TelefonoClienteDTO.cs" t="Include" />
+          <e p="TelefonoProveedorCreacionDTO.cs" t="Include" />
+          <e p="TelefonoProveedorDTO.cs" t="Include" />
+          <e p="TipoEmpaqueCreacionDTO.cs" t="Include" />
+          <e p="TipoEmpaqueDTO.cs" t="Include" />
+          <e p="UserInfo.cs" t="Include" />
+          <e p="UserToken.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="InventarioApi.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
