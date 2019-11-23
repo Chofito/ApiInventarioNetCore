@@ -34,7 +34,7 @@ namespace InventarioApi.Controllers
         [HttpGet("{id}", Name = "GetCompra")]
         public async Task<ActionResult<CompraDTO>> Get(int id)
         {
-            var compra = await _contexto.Compras.FirstOrDefaultAsync(x => x.IdCompra.Equals(id));
+            var compra = await _contexto.Compras.FirstOrDefaultAsync(x => x.CodigoCompra.Equals(id));
             if (compra == null)
             {
                 return NotFound();
@@ -51,7 +51,7 @@ namespace InventarioApi.Controllers
             _contexto.Add((object) compra);
             await _contexto.SaveChangesAsync();
             var compraDto = _mapper.Map<CompraDTO>(compra);
-            return new CreatedAtRouteResult("GetCompra", new {id = compra.IdCompra},
+            return new CreatedAtRouteResult("GetCompra", new {id = compra.CodigoCompra},
                 compraDto);
         }
 
@@ -59,7 +59,7 @@ namespace InventarioApi.Controllers
         public async Task<ActionResult> Put(int id, [FromBody] CompraCreacionDTO compraActualizacion)
         {
             var compra = _mapper.Map<Compra>(compraActualizacion);
-            compra.IdCompra = id;
+            compra.CodigoCompra = id;
             _contexto.Entry(compra).State = EntityState.Modified;
             await _contexto.SaveChangesAsync();
             return NoContent();
@@ -68,14 +68,14 @@ namespace InventarioApi.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<CompraDTO>> Delete(int id)
         {
-            var compra = await _contexto.Compras.Select(x => x.IdCompra)
+            var compra = await _contexto.Compras.Select(x => x.CodigoCompra)
                 .FirstOrDefaultAsync(x => x == id);
             if (compra == default(int))
             {
                 return NotFound();
             }
 
-            _contexto.Remove(new Compra {IdCompra = id});
+            _contexto.Remove(new Compra {CodigoCompra = id});
             await _contexto.SaveChangesAsync();
             return NoContent();
         }

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+    <e p="C:\Users\programacion\.Rider2019.2\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\programacion\.Rider2019.2\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\programacion\.Rider2019.2\config\scratches" t="IncludeRecursive" />
     <e p="C:\Users\programacion\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\programacion\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_CursoFullStack.-1827710391.00" t="ExcludeRecursive" />
-    <e p="C:\Users\programacion\Documents\Api\CursoFullStack" t="IncludeFlat">
+    <e p="C:\Users\programacion\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_CursoFullStack.1943691867.00" t="ExcludeRecursive" />
+    <e p="C:\Users\programacion\Desktop\ApiInventarioNetCore" t="IncludeFlat">
       <e p=".git\info\exclude" t="IncludeRecursive" />
       <e p="CursoFullStack.sln" t="IncludeFlat" />
       <e p="InventarioApi" t="IncludeRecursive">
@@ -55,10 +58,14 @@
         <e p="Migrations" t="Include">
           <e p="20191109173415_initial.cs" t="Include" />
           <e p="20191109173415_initial.Designer.cs" t="Include" />
+          <e p="20191123170730_migrationsv2.cs" t="Include" />
+          <e p="20191123170730_migrationsv2.Designer.cs" t="Include" />
           <e p="InventarioDBContextModelSnapshot.cs" t="Include" />
           <e p="InventarioIdentity" t="Include">
             <e p="20191109173447_initial.cs" t="Include" />
             <e p="20191109173447_initial.Designer.cs" t="Include" />
+            <e p="20191123170813_migrationsv2.cs" t="Include" />
+            <e p="20191123170813_migrationsv2.Designer.cs" t="Include" />
             <e p="InventarioIdentityContextModelSnapshot.cs" t="Include" />
           </e>
         </e>
@@ -82,6 +89,7 @@
           <e p="FacturaDTO.cs" t="Include" />
           <e p="InventarioCreacionDTO.cs" t="Include" />
           <e p="InventarioDTO.cs" t="Include" />
+          <e p="PaginatorData.cs" t="Include" />
           <e p="ProductoCreacionDTO.cs" t="Include" />
           <e p="ProductoDTO.cs" t="Include" />
           <e p="ProveedorCreacionDTO.cs" t="Include" />

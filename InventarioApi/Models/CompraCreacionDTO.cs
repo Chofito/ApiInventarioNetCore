@@ -6,7 +6,7 @@ namespace InventarioApi.Models
     {
         public int NumeroDocumento { get; set; }
         public int CodigoProveedor { get; set; }
-        public DateTime dateTime { get; set; }
+        public DateTime Fecha { get; set; }
         public decimal Total { get; set; }
     }
 }

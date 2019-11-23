@@ -5,7 +5,7 @@ namespace InventarioApi.Entities
 {
     public class Compra
     {
-        public int IdCompra { get; set; }
+        public int CodigoCompra { get; set; }
         public int NumeroDocumento { get; set; }
         public int CodigoProveedor { get; set; }
         public DateTime dateTime { get; set; }

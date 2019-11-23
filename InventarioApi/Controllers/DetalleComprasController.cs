@@ -34,7 +34,7 @@ namespace InventarioApi.Controllers
         [HttpGet("{id}", Name = "GetDetalleProducto")]
         public async Task<ActionResult<DetalleCompraDTO>> Get(int id)
         {
-            var detalleCompra = await _contexto.DetalleCompras.FirstOrDefaultAsync(x => x.IdDetalle.Equals(id));
+            var detalleCompra = await _contexto.DetalleCompras.FirstOrDefaultAsync(x => x.CodigoDetalle.Equals(id));
             if (detalleCompra == null)
             {
                 return NotFound();
@@ -51,7 +51,7 @@ namespace InventarioApi.Controllers
             _contexto.Add((object) detalleCompra);
             await _contexto.SaveChangesAsync();
             var detalleCompraDto = _mapper.Map<DetalleCompraDTO>(detalleCompra);
-            return new CreatedAtRouteResult("GetDetalleProducto", new {id = detalleCompra.IdDetalle},
+            return new CreatedAtRouteResult("GetDetalleProducto", new {id = detalleCompra.CodigoDetalle},
                 detalleCompraDto);
         }
 
@@ -59,7 +59,7 @@ namespace InventarioApi.Controllers
         public async Task<ActionResult> Put(int id, [FromBody] DetalleCompraCreacionDTO detalleCompraActualizacion)
         {
             var detalleCompra = _mapper.Map<DetalleCompra>(detalleCompraActualizacion);
-            detalleCompra.IdDetalle = id;
+            detalleCompra.CodigoDetalle = id;
             _contexto.Entry(detalleCompra).State = EntityState.Modified;
             await _contexto.SaveChangesAsync();
             return NoContent();
@@ -68,14 +68,14 @@ namespace InventarioApi.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<DetalleCompraDTO>> Delete(int id)
         {
-            var idDetalle = await _contexto.DetalleCompras.Select(x => x.IdDetalle)
+            var idDetalle = await _contexto.DetalleCompras.Select(x => x.CodigoDetalle)
                 .FirstOrDefaultAsync(x => x == id);
             if (idDetalle == default(int))
             {
                 return NotFound();
             }
 
-            _contexto.Remove(new DetalleCompra {IdDetalle = id});
+            _contexto.Remove(new DetalleCompra {CodigoDetalle = id});
             await _contexto.SaveChangesAsync();
             return NoContent();
         }

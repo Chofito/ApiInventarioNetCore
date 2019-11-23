@@ -34,6 +34,25 @@ namespace InventarioApi.Controllers
             return categoriasDto;
         }
 
+        // TODO: PaginatorData with `Errors` field and Try/Catch.
+        [HttpGet("paged")]
+        public async Task<ActionResult<PaginatorData<CategoriaDTO>>> GetPaged(int pagina = 0, int cantidad = 10)
+        {
+            var result = new PaginatorData<CategoriaDTO>();
+            var categorias = await _contexto.Categorias.Skip(cantidad * pagina).Take(cantidad).ToListAsync();
+            
+            var total = categorias.Count / cantidad;
+            
+            result.Content = _mapper.Map<List<CategoriaDTO>>(categorias);
+            result.Empty = result.Content.Any();
+            result.First = pagina == 0;
+            result.Last = total == pagina;
+            result.Number = pagina;
+            result.TotalPages = total;
+
+            return result;
+        }
+
         [HttpGet("{id}", Name = "GetCategoria")]
         public async Task<ActionResult<CategoriaDTO>> Get(int id)
         {

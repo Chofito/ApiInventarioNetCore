@@ -56,7 +56,7 @@ namespace InventarioApi.Migrations
 
             modelBuilder.Entity("InventarioApi.Entities.Compra", b =>
                 {
-                    b.Property<int>("IdCompra")
+                    b.Property<int>("CodigoCompra")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -76,7 +76,7 @@ namespace InventarioApi.Migrations
                     b.Property<DateTime>("dateTime")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("IdCompra");
+                    b.HasKey("CodigoCompra");
 
                     b.HasIndex("ProveedorCodigoProveedor");
 
@@ -85,7 +85,7 @@ namespace InventarioApi.Migrations
 
             modelBuilder.Entity("InventarioApi.Entities.DetalleCompra", b =>
                 {
-                    b.Property<int>("IdDetalle")
+                    b.Property<int>("CodigoDetalle")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -93,13 +93,13 @@ namespace InventarioApi.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
+                    b.Property<int>("CodigoCompra")
+                        .HasColumnType("int");
+
                     b.Property<int>("CodigoProducto")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CompraIdCompra")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdCompra")
+                    b.Property<int?>("CompraCodigoCompra")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Precio")
@@ -108,9 +108,9 @@ namespace InventarioApi.Migrations
                     b.Property<int?>("ProductoCodigoProducto")
                         .HasColumnType("int");
 
-                    b.HasKey("IdDetalle");
+                    b.HasKey("CodigoDetalle");
 
-                    b.HasIndex("CompraIdCompra");
+                    b.HasIndex("CompraCodigoCompra");
 
                     b.HasIndex("ProductoCodigoProducto");
 
@@ -336,7 +336,7 @@ namespace InventarioApi.Migrations
 
             modelBuilder.Entity("InventarioApi.Entities.Role", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -344,7 +344,7 @@ namespace InventarioApi.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Roles");
                 });
@@ -419,7 +419,7 @@ namespace InventarioApi.Migrations
 
             modelBuilder.Entity("InventarioApi.Entities.User", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -442,29 +442,29 @@ namespace InventarioApi.Migrations
                     b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Users");
                 });
 
             modelBuilder.Entity("InventarioApi.Entities.UserRole", b =>
                 {
-                    b.Property<int>("RoleID")
+                    b.Property<int>("RoleId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("RoleID1")
+                    b.Property<int>("RoleId1")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserID")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("RoleID");
+                    b.HasKey("RoleId");
 
-                    b.HasIndex("RoleID1");
+                    b.HasIndex("RoleId1");
 
-                    b.HasIndex("UserID");
+                    b.HasIndex("UserId");
 
                     b.ToTable("UserRoles");
                 });
@@ -480,7 +480,7 @@ namespace InventarioApi.Migrations
                 {
                     b.HasOne("InventarioApi.Entities.Compra", "Compra")
                         .WithMany("DetalleCompras")
-                        .HasForeignKey("CompraIdCompra");
+                        .HasForeignKey("CompraCodigoCompra");
 
                     b.HasOne("InventarioApi.Entities.Producto", "Producto")
                         .WithMany("DetalleCompras")
@@ -555,13 +555,13 @@ namespace InventarioApi.Migrations
                 {
                     b.HasOne("InventarioApi.Entities.Role", "Role")
                         .WithMany("UserRoles")
-                        .HasForeignKey("RoleID1")
+                        .HasForeignKey("RoleId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("InventarioApi.Entities.User", "User")
                         .WithMany("UserRoles")
-                        .HasForeignKey("UserID")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

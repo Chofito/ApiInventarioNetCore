@@ -37,9 +37,9 @@ namespace InventarioApi.Contexts
             modelBuilder.Entity<Cliente>().ToTable("Clientes")
                 .HasKey(x => x.Nit);
             modelBuilder.Entity<Compra>().ToTable("Compras")
-                .HasKey(x => x.IdCompra);
+                .HasKey(x => x.CodigoCompra);
             modelBuilder.Entity<DetalleCompra>().ToTable("DetalleCompras")
-                .HasKey(x => x.IdDetalle);
+                .HasKey(x => x.CodigoDetalle);
             modelBuilder.Entity<DetalleFactura>().ToTable("DetalleFacturas")
                 .HasKey(x => x.CodigoDetalle);
             modelBuilder.Entity<Emailcliente>().ToTable("Emailclientes")
@@ -55,7 +55,7 @@ namespace InventarioApi.Contexts
             modelBuilder.Entity<Proveedor>().ToTable("Proveedores")
                 .HasKey(x => x.CodigoProveedor);
             modelBuilder.Entity<Role>().ToTable("Roles")
-                .HasKey(x => x.ID);
+                .HasKey(x => x.Id);
             modelBuilder.Entity<TelefonoCliente>().ToTable("TelefonoClientes")
                 .HasKey(x => x.CodigoTelefono);
             modelBuilder.Entity<TelefonoProveedor>().ToTable("TelefonoProveedores")
@@ -63,9 +63,9 @@ namespace InventarioApi.Contexts
             modelBuilder.Entity<TipoEmpaque>().ToTable("TipoEmpaques")
                 .HasKey(x => x.CodigoEmpaque);
             modelBuilder.Entity<User>().ToTable("Users")
-                .HasKey(x => x.ID);
+                .HasKey(x => x.Id);
             modelBuilder.Entity<UserRole>().ToTable("UserRoles")
-                .HasKey(x => x.RoleID);
+                .HasKey(x => x.RoleId);
             base.OnModelCreating(modelBuilder);
         }
     }
