@@ -47,7 +47,7 @@ namespace InventarioApi.Controllers
             result.Empty = result.Content.Any();
             result.First = pagina == 0;
             result.Last = total == pagina;
-            result.Number = pagina;
+            result.PageNumber = pagina;
             result.TotalPages = total;
 
             return result;
